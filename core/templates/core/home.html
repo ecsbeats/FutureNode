@@ -1,3 +1,83 @@
 {% extends "core/base.html" %}
 {% block content %}
+<div class="jumbotron bg-transparent mb-0 radius-0">
+  <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <h1 class="display-2">Future Node<span class="vim-caret"></span></h1>
+          <div class="lead mb-3 text-mono text-success">Building a stronger future for everyone!</div>
+          <div class="text-mono">
+            <div class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
+              Welcome!
+            </div>
+            <div class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+              We invite you!
+            </div>
+          </div>
+
+          <div class="text-darkgrey text-mono my-2">Join Us in our journey</div>
+
+          <p class="mt-5 text-grey text-spacey">
+            Todo: Our project summery
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="container py-5 mb5">
+  <div class="ht-tm-codeblock ht-tm-btn">
+    <div class="ht-tm-element card text-center">
+      <div class="card-header">
+        Predictions
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Graph</h4>
+        <canvas id = "chart" width = "400" height = "400"></canvas>
+      </div>
+      <div class="card-footer text-muted">
+        <div class="btn btn-warning btn-shadow px-3 my-2 ml-0 text-left">
+          BTC:
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5 mb5">
+
+  <h1 class="mb-5">Demo</h1>
+  <div class="row">
+    <div class="card">
+      <div class="card-body ht-tm-superspecialcardcheat">
+
+        <h6 class="card-title">Form</h6>
+
+        <div class="ht-tm-codeblock ht-tm-btn-replaceable ">
+          <form class="form-inline ht-tm-element ">
+            <select class="custom-select">
+              <option value="1">BitCoin</option>
+            </select>
+
+            <div class="input-group col-sm">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Bitcoin amount">
+            </div>
+
+            <div class="input-group col-sm">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Prediction Time">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Go</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>
+
 {% endblock %}
