@@ -15,7 +15,8 @@ def sell(wallet):
 def buy(wallet):
     cash_balance = wallet.cash_balance
     crypto_balance = balance.cash_to_crypto(cash_balance)
-
+    wallet.cash_balance = 0
+    wallet.crypto_balance += crypto_balance
 
 def send_cash(wallet, amount=0):
     wallet.cash_balance += amount

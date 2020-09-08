@@ -10,7 +10,7 @@ class Main:
     def __init__(self):
         self.wallet_id = None
         self.entries = []
-        self.predicted_entry = 0
+        self.predicted_entry = None
         self.running = False
         self.wallet = None
 
@@ -33,22 +33,23 @@ class Main:
     def running_thread(self):
         while self.running == True:
             time.sleep(3)
-            self.predicted_entry = self.engine.predicted_entries
-            if self.predicted_entry != 0:
+            self.predicted_entry = self.engine.predicted_entries[-1]
+            if self.predicted_entry is not None:
                 self.handle_code(data_handler(self.engine.entries, self.engine.predicted_entries[-1]))
+
             else:
                 self.handle_code(data_handler(self.engine.entries))
 
     def handle_code(self, code):
         if code == -1:
             wallet.buy(self.wallet)
-            self.wallet.save()
+            wallet.save(self.wallet)
         elif code == 1:
             wallet.sell(self.wallet)
-            self.wallet.save()
+            wallet.save(self.wallet)
         else:
+            wallet.save(self.wallet)
             pass
-
     def create_wallet(self):
         new_wallet = Wallet()
         self.wallet_id = new_wallet.id

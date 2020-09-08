@@ -12,7 +12,8 @@ def data_handler(known_entries, predicted_entry=None):
         cagr_all = compound_average_growth_rate([entries[-1]] + [predicted_entry])
     if cagr_entries <= -0.0006:
         return -1
-    elif cagr_entries >= 0.0001:
+    elif cagr_entries >= 0.00001:
         return 1
     else:
+        print(cagr_entries, 0)
         return 0
